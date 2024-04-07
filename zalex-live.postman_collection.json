@@ -1,0 +1,133 @@
+{
+	"info": {
+		"_postman_id": "21cc4b85-40fe-4f02-97ab-7b452eb1990f",
+		"name": "zalex",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "2 - get all",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://srv18.mikr.us:40215/api/certificates?address_to=of&size=1",
+					"protocol": "http",
+					"host": [
+						"srv18",
+						"mikr",
+						"us"
+					],
+					"port": "40215",
+					"path": [
+						"api",
+						"certificates"
+					],
+					"query": [
+						{
+							"key": "address_to",
+							"value": "of"
+						},
+						{
+							"key": "size",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get one",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://srv18.mikr.us:40215/api/certificates/5e0be943-641a-48fb-a9fd-2c7175ace902",
+					"protocol": "http",
+					"host": [
+						"srv18",
+						"mikr",
+						"us"
+					],
+					"port": "40215",
+					"path": [
+						"api",
+						"certificates",
+						"5e0be943-641a-48fb-a9fd-2c7175ace902"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "3 - update purpose",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n \"purpose\": \"Pass3 Application Pass2 Application Pass2 Application Pass2 Application Pass2 Application Pass2 Application Pass2 Application Pass2 Application\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://srv18.mikr.us:40215/api/certificates/5e0be943-641a-48fb-a9fd-2c7175ace902",
+					"protocol": "http",
+					"host": [
+						"srv18",
+						"mikr",
+						"us"
+					],
+					"port": "40215",
+					"path": [
+						"api",
+						"certificates",
+						"5e0be943-641a-48fb-a9fd-2c7175ace902"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "1 - create",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "43b647491f1d436cb0130a329fcdca50",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n \"address_to\": \"Embassy of Neptun\",\n \"purpose\": \"Visa Application Visa Application Visa Application Visa Application Visa Application Visa Application Visa Application Visa Application Visa Application Visa Application\",\n \"issued_on\": \"12/9/2024\",\n \"employee_id\": \"123456\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://srv18.mikr.us:40215/api/certificates",
+					"protocol": "http",
+					"host": [
+						"srv18",
+						"mikr",
+						"us"
+					],
+					"port": "40215",
+					"path": [
+						"api",
+						"certificates"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

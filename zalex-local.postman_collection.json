@@ -1,0 +1,143 @@
+{
+	"info": {
+		"_postman_id": "35299213-cbb8-48f4-aff7-c753fea3b404",
+		"name": "zalex-local",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "get all",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "{add your api key from env}",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/certificates?address_to=of&size=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"certificates"
+					],
+					"query": [
+						{
+							"key": "address_to",
+							"value": "of"
+						},
+						{
+							"key": "size",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get one",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "{add your api key from env}",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/certificates/5e0be943-641a-48fb-a9fd-2c7175ace902",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"certificates",
+						"5e0be943-641a-48fb-a9fd-2c7175ace902"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update purpose",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "{add your api key from env}",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n \"purpose\": \"Pass3 Application Pass2 Application Pass2 Application Pass2 Application Pass2 Application Pass2 Application Pass2 Application Pass2 Application\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/certificates/{5e0be943-641a-48fb-a9fd-2c7175ace902}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"certificates",
+						"{5e0be943-641a-48fb-a9fd-2c7175ace902}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "{add your api key from env}",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n \"address_to\": \"Embassy of Neptun\",\n \"purpose\": \"Visa Application Visa Application Visa Application Visa Application Visa Application Visa Application Visa Application Visa Application Visa Application Visa Application\",\n \"issued_on\": \"12/9/2024\",\n \"employee_id\": \"123456\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/certificates",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"certificates"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
